@@ -1,7 +1,7 @@
 # RSO project — UL FRI
 
 Organization for a course project in **Cloud Services (RSO)** at the University of Ljubljana, Faculty of Computer and Information Science (UL FRI).  
-We are **three students** building a microservices-based platform for easier studying, one repo per service.
+We are **three students** (Janez Tomšič, Matija Bažec, Matic Zadobovšek) building a microservices-based platform for easier studying, one repo per service.
 
 > Currently available: **svc-courses** — minimal Courses service (Node/Express + PostgreSQL) with Docker/Kubernetes manifests, Azure ACR/AKS scripts, Prisma migrations, and some tests. See that repo’s README for setup & deployment.
 
