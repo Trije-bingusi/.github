@@ -1,12 +1,22 @@
-## Hi there 👋
+# RSO project — UL FRI
 
-<!--
+Organization for a course project in **Cloud Services (RSO)** at the University of Ljubljana, Faculty of Computer and Information Science (UL FRI).  
+We are **three students** building a microservices-based platform for easier studying, one repo per service.
 
-**Here are some ideas to get you started:**
+> Currently available: **svc-courses** — minimal Courses service (Node/Express + PostgreSQL) with Docker/Kubernetes manifests, Azure ACR/AKS scripts, Prisma migrations, and some tests. See that repo’s README for setup & deployment.
 
-🙋‍♀️ A short introduction - what is your organization all about?
-🌈 Contribution guidelines - how can the community get involved?
-👩‍💻 Useful resources - where can the community find your docs? Is there anything else the community should know?
-🍿 Fun facts - what does your team eat for breakfast?
-🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
--->
+## Platform vision
+- **Subjects & lectures:** each subject page aggregates its lectures.
+- **Lecture view:** a dedicated page per lecture with the video centered and a right-hand sidebar offering:
+  - **Chat:** persistent history with **timestamps** for each message.
+  - **Speech-to-Text:** live/archived transcript of the lecture.
+  - **Personal notes:** take and save notes per lecture; notes are also accessible from the subject’s main page for study.
+- **Smart search:** search across transcripts and jump directly to the **lecture + timestamp** where the topic appears.
+- **Forum:** a subject-level forum on each subject subpage for Q&A among students.
+- **Administration:** professors/admins can **upload and remove** lecture videos and manage metadata.
+
+## Contributing
+This is a **course project**. We do **not** accept external contributions; PRs from non-members will be closed.
+
+---
+© UL FRI — RSO course project
