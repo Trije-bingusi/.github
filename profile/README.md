@@ -32,6 +32,7 @@ The platform (eUčilnica+) supports the full study workflow:
   - Deployed to **Azure Kubernetes Service (AKS)**
   - TLS via **NGINX Ingress + cert-manager + Let’s Encrypt**
   - Monitoring with Prometheus & Grafana
+  - Centralized Logging with Promtail & Loki
 
 ---
 
