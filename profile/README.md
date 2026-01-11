@@ -1,22 +1,66 @@
 # RSO project — UL FRI
 
-Organization for a course project in **Cloud Services (RSO)** at the University of Ljubljana, Faculty of Computer and Information Science (UL FRI).  
-We are **three students** (Janez Tomšič, Matija Bažec, Matic Zadobovšek) building a microservices-based platform for easier studying, one repo per service.
-
-> Currently available: **svc-courses** — minimal Courses service (Node/Express + PostgreSQL) with Docker/Kubernetes manifests, Azure ACR/AKS scripts, Prisma migrations, and some tests. See that repo’s README for setup & deployment.
-
-## Platform vision
-- **Subjects & lectures:** each subject page aggregates its lectures.
-- **Lecture view:** a dedicated page per lecture with the video centered and a right-hand sidebar offering:
-  - **Chat:** persistent history with **timestamps** for each message.
-  - **Speech-to-Text:** live/archived transcript of the lecture.
-  - **Personal notes:** take and save notes per lecture; notes are also accessible from the subject’s main page for study.
-- **Smart search:** search across transcripts and jump directly to the **lecture + timestamp** where the topic appears.
-- **Forum:** a subject-level forum on each subject subpage for Q&A among students.
-- **Administration:** professors/admins can **upload and remove** lecture videos and manage metadata.
-
-## Contributing
-This is a **course project**. We do **not** accept external contributions; PRs from non-members will be closed.
+Organization for a course project at the University of Ljubljana, Faculty of Computer and Information Science (UL FRI).  
+The project is developed by three students (Janez Tomšič, Matija Bažec, Matic Zadobovšek) and represents a finished microservices-based learning platform.
 
 ---
+
+## Platform overview
+
+The platform (eUčilnica+) supports the full study workflow:
+
+- **Courses & lectures**  
+  Professors can create courses and add lectures with video recordings.
+
+- **Lecture view**  
+  Each lecture has a dedicated page with:
+  - video playback,
+  - automatically generated **transcription (subtitles)**,
+  - **AI-generated summary**,
+  - personal **student notes**,
+  - course-level **forum discussions**.
+
+- **Forum**  
+  Each course includes a forum for creating threads and posts, implemented as a serverless service.
+
+- **Authentication & roles**  
+  Users authenticate via **Keycloak (OIDC)**.  
+  Roles (student / professor) control access to write operations.
+
+- **Architecture**  
+  - REST APIs exposed through a **single API Gateway**
+  - Deployed to **Azure Kubernetes Service (AKS)**
+  - TLS via **NGINX Ingress + cert-manager + Let’s Encrypt**
+  - Monitoring with Prometheus & Grafana
+
+---
+
+## Repositories
+
+### Application services
+- **svc-courses** – Courses & lectures service
+- **svc-users** – User profile service
+- **svc-notes** – Personal notes service
+- **svc-video** – Video management service
+- **svc-transcription** – Lecture video transcription service
+- **svc-summary** – AI-based text summarization service
+- **svc-forum** – Serverless forum service
+
+### Platform & infrastructure
+- **svc-gateway** – API Gateway (routing, auth, RBAC, metrics)
+- **rso-frontend** – Web frontend (Nuxt / Vue.js)
+- **shared-infrastructure** – Terraform definitions for AKS, ACR, Key Vault, Ingress, Keycloak...
+- **rso-platform** – Local integration and testing setup (Docker Compose)
+
+Each repository has its own README with setup instructions, local development steps, and deployment details.
+
+---
+
+## Contributing
+
+This repository group represents a **course project**.  
+External contributions are **not accepted**; pull requests from non-members will be closed.
+
+---
+
 © UL FRI — RSO course project
